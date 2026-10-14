@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ROOT 개인정보 처리방침</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: legal document column with a sticky article index on wide screens; tables stack into labeled rows on phones */
+*, *::before, *::after { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --bg: #f6f7f5;
+  --paper: #ffffff;
+  --ink: #1d2420;
+  --muted: #5d6862;
+  --line: #dde2de;
+  --soft: #eef2ef;
+  --accent: #1f5c46;
+  --accent-soft: #e3eee8;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121614; --paper: #1a1f1c; --ink: #e4e9e5; --muted: #9aa69f;
+    --line: #2d3531; --soft: #222925; --accent: #7cc4a5; --accent-soft: #1f2e27;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121614; --paper: #1a1f1c; --ink: #e4e9e5; --muted: #9aa69f;
+  --line: #2d3531; --soft: #222925; --accent: #7cc4a5; --accent-soft: #1f2e27;
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15.5px; line-height: 1.75;
+  word-break: keep-all; overflow-wrap: anywhere;
+  padding: env(safe-area-inset-top, 0px) 16px env(safe-area-inset-bottom, 0px);
+}
+img { max-width: 100%; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.wrap {
+  max-width: 860px; margin: 0 auto; padding-block: 40px 72px;
+}
+@media (max-width: 640px) { .wrap { padding-block: 24px 56px; } }
+
+/* Document */
+.doc { min-width: 0; display: grid; gap: 28px; }
+.sheet { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 40px 44px; display: grid; gap: 34px; }
+@media (max-width: 640px) { .sheet { padding: 26px 18px; gap: 28px; } }
+
+.head { display: grid; gap: 14px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+.eyebrow { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--accent); }
+h1 { font-size: clamp(24px, 4vw, 31px); line-height: 1.3; margin: 0; font-weight: 700; text-wrap: balance; letter-spacing: -.01em; }
+.meta { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; font-size: 14px; color: var(--muted); margin: 0; }
+.meta dt { font-weight: 500; }
+.meta dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+.effective { justify-self: start; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+
+section.art { display: grid; gap: 12px; }
+h2 { font-size: 18px; line-height: 1.4; margin: 0; font-weight: 700; text-wrap: balance; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+h2 .no { color: var(--accent); font-variant-numeric: tabular-nums; flex: none; }
+p { margin: 0; max-width: 68ch; }
+ul.items { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; max-width: 68ch; }
+ul.items li::marker { color: var(--accent); }
+.note { font-size: 14px; color: var(--muted); background: var(--soft); border-radius: 8px; padding: 12px 14px; max-width: 72ch; }
+
+/* Tables */
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.6; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+thead th { background: var(--soft); font-weight: 600; font-size: 13.5px; color: var(--ink); white-space: nowrap; }
+tbody th { font-weight: 600; background: var(--soft); width: 30%; }
+td.req { white-space: nowrap; }
+.tag { display: inline-block; font-size: 12.5px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.tag.plain { background: var(--soft); color: var(--muted); }
+
+@media (max-width: 640px) {
+  table.stack thead { display: none; }
+  table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: auto; }
+  table.stack tr { padding: 12px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
+  table.stack tr:last-child { border-bottom: 0; }
+  table.stack td { padding: 0; border: 0; }
+  table.stack td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+  table.stack td:first-child { font-weight: 600; }
+  table.kv th, table.kv td { display: block; width: auto; }
+  table.kv th { border-bottom: 0; padding-bottom: 4px; }
+  table.kv td { padding-top: 0; }
+  table.kv thead { display: none; }
+}
+
+/* Recipient list */
+.recipients { display: grid; gap: 14px; }
+.recipients h4 { margin: 0 0 4px; font-size: 14.5px; font-weight: 700; }
+.recipients ul { margin: 0; padding: 0; list-style: none; columns: 2 220px; column-gap: 20px; font-size: 13.5px; color: var(--ink); }
+.recipients li { break-inside: avoid; padding: 2px 0; }
+.recipients li span { color: var(--muted); }
+
+.part-title { display: grid; gap: 6px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.part-title p { color: var(--muted); font-size: 14.5px; }
+
+footer { font-size: 13px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <main class="doc">
+    <article class="sheet">
+      <header class="head">
+        <div class="eyebrow">ROOT 상담신청</div>
+        <h1>ROOT 상담신청 개인정보 처리방침</h1>
+        <dl class="meta">
+          <dt>개인정보처리자</dt><dd>주식회사 에스비티(SBT)</dd>
+          <dt>대표자</dt><dd>황옥이</dd>
+          <dt>사업자등록번호</dt><dd>487-87-03466</dd>
+          <dt>주소</dt><dd>서울특별시 금천구 벚꽃로 298, 1313호(가산동, 대륭포스트타워6차)</dd>
+        </dl>
+        <span class="effective">시행일 2026년 10월 12일</span>
+      </header>
+
+      <section class="art">
+        <h2><span class="no">제1조</span>개인정보의 처리 목적</h2>
+        <p>개인정보처리자는 다음 목적에 필요한 범위에서 개인정보를 처리합니다. 목적이 변경되는 경우에는 개인정보 보호법에 따라 별도의 동의를 받는 등 필요한 조치를 합니다.</p>
+        <ul class="items">
+          <li>보험 상담 신청 접수 및 신청자 확인</li>
+          <li>신청 지역·상담 가능 범위 등을 고려한 상담 담당자 또는 보험대리점 배정</li>
+          <li>신청자가 요청한 보험 상담 연락 및 상담 진행</li>
+          <li>중복·부정 신청 방지와 민원·분쟁 처리</li>
+        </ul>
+        <p>보험상품 광고, 이벤트 안내, 재상담 권유 등 선택적 마케팅은 위 목적과 분리하여 별도 동의를 받은 경우에만 수행합니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제2조</span>처리하는 개인정보 항목</h2>
+        <div class="tbl">
+          <table class="stack">
+            <thead><tr><th>구분</th><th>항목</th><th>필수 여부</th></tr></thead>
+            <tbody>
+              <tr><td data-label="구분">상담 신청</td><td data-label="항목">이름, 휴대전화번호, 성별, 생년월일, 거주지역</td><td data-label="필수 여부" class="req"><span class="tag">필수</span></td></tr>
+              <tr><td data-label="구분">상담 배정·적합성 확인</td><td data-label="항목">수집하지 않음</td><td data-label="필수 여부" class="req"><span class="tag plain">해당 없음</span></td></tr>
+              <tr><td data-label="구분">시스템 자동생성 정보</td><td data-label="항목">신청일시 및 상담 신청 경로</td><td data-label="필수 여부" class="req"><span class="tag plain">서비스 운영기록</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">주민등록번호, 건강정보, 보험가입·청구내역 등 민감하거나 고유식별정보에 해당할 수 있는 정보는 이 리드폼에서 수집하지 않습니다. 실제 수집한다면 별도의 법적 근거와 동의 절차를 마련해야 합니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제3조</span>개인정보의 처리 및 보유 기간</h2>
+        <div class="tbl">
+          <table class="stack">
+            <thead><tr><th>처리 목적</th><th>보유 기간</th><th>비고</th></tr></thead>
+            <tbody>
+              <tr><td data-label="처리 목적">상담 신청 접수·배정·진행</td><td data-label="보유 기간">상담 종료일, 동의 철회일 또는 수집일로부터 6개월이 되는 날 중 먼저 도래하는 날까지</td><td data-label="비고">상담 결과가 확정되고 추가 연락이 종료된 때를 상담 종료로 봄</td></tr>
+              <tr><td data-label="처리 목적">중복·부정 신청 방지</td><td data-label="보유 기간">휴대전화번호를 일방향 변환한 값 등 최소정보를 6개월간 보관</td><td data-label="비고">해시값 등 비식별 대체 가능성 검토</td></tr>
+              <tr><td data-label="처리 목적">선택적 마케팅</td><td data-label="보유 기간">동의 철회 시 또는 동의일로부터 2년까지</td><td data-label="비고">상담 동의와 분리</td></tr>
+              <tr><td data-label="처리 목적">법령상 보존</td><td data-label="보유 기간">적용 법령이 실제 거래·계약 관계에 요구하는 기간</td><td data-label="비고">다른 개인정보와 분리 보관</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">전자상거래법상 소비자 불만·분쟁처리 기록 3년 등의 보존기간은 해당 서비스가 그 법의 적용을 받는 거래를 실제로 수행하는 경우에만 기재합니다. 단순 상담 신청만 받는 단계에 당연히 적용된다고 단정하지 않습니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제4조</span>개인정보의 제3자 제공</h2>
+        <p>개인정보처리자는 보험 상담을 수행할 보험대리점(GA)의 정확한 법인명, 제공 목적, 제공 항목 및 보유기간을 상담 신청 화면에서 먼저 알리고 별도 동의를 받은 경우에만 개인정보를 제공합니다. 동의 화면에 정확한 법인명이 표시되지 않은 경우에는 개인정보를 제3자에게 제공하지 않습니다.</p>
+        <div class="tbl">
+          <table class="stack">
+            <thead><tr><th>제공받는 자</th><th>제공 목적</th><th>제공 항목</th><th>보유 및 이용 기간</th></tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="제공받는 자">상담 신청 시 제3자 제공 동의 화면에 정확한 법인명이 표시된 보험대리점(GA)</td>
+                <td data-label="제공 목적">배정된 담당자를 통한 보험 상담 연락과 상담 진행</td>
+                <td data-label="제공 항목">이름, 휴대전화번호, 성별, 거주지역</td>
+                <td data-label="보유 및 이용 기간">상담 종료일, 동의 철회일 또는 제공일로부터 6개월이 되는 날 중 먼저 도래하는 날까지</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제5조</span>개인정보 처리업무의 위탁</h2>
+        <p>개인정보처리자는 아래 업체를 실제로 이용하는 범위에서 개인정보 처리업무를 위탁하며, 개인정보 보호법 제26조에 따른 사항을 계약서 등 문서에 포함하고 수탁자를 관리·감독합니다. 이용하지 않는 업체는 게시 목록에서 즉시 삭제합니다.</p>
+        <div class="tbl">
+          <table class="stack">
+            <thead><tr><th>수탁자</th><th>위탁업무</th><th>확인사항</th></tr></thead>
+            <tbody>
+              <tr><td data-label="수탁자">아마존웹서비시스코리아 유한책임회사</td><td data-label="위탁업무">클라우드 인프라 제공</td><td data-label="확인사항">클라우드 계약 및 리전 설정에 따름</td></tr>
+              <tr><td data-label="수탁자">코리아크레딧뷰로 주식회사 KCB</td><td data-label="위탁업무">휴대전화 본인확인</td><td data-label="확인사항">휴대전화번호 및 본인확인 결과</td></tr>
+              <tr><td data-label="수탁자">주식회사 LG CNS 또는 삼정데이타서비스 주식회사</td><td data-label="위탁업무">알림톡·문자·이메일 발송</td><td data-label="확인사항">이용 중인 발송 채널에 해당하는 수탁자</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">단순한 서버·통신 도구 제공이라도 실제 개인정보 처리 범위와 계약 구조에 따라 위탁 또는 국외 이전에 해당할 수 있습니다. 계약서와 데이터 흐름을 기준으로 최종 목록을 확정하고 변경 시 지체 없이 공개합니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제6조</span>개인정보의 파기</h2>
+        <p>보유기간이 지나거나 처리 목적을 달성하여 개인정보가 불필요하게 된 경우 지체 없이 파기합니다. 다른 법령에 따라 보존해야 하는 개인정보는 별도의 데이터베이스 또는 보관장소에 분리하여 보관합니다.</p>
+        <ul class="items">
+          <li>전자적 파일: 복구 또는 재생할 수 없도록 안전한 방법으로 영구 삭제</li>
+          <li>종이 문서: 분쇄하거나 소각</li>
+          <li>기술적 특성으로 영구 삭제가 현저히 곤란한 경우: 복원이 불가능하도록 법령이 정한 조치 수행</li>
+        </ul>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제7조</span>개인정보의 안전성 확보조치</h2>
+        <ul class="items">
+          <li>관리적 조치: 내부관리계획 수립·시행, 접근권한 최소화, 임직원 교육 및 수탁자 관리</li>
+          <li>기술적 조치: 접근통제, 권한관리, 암호화, 접속기록 보관·점검 및 악성프로그램 방지</li>
+          <li>물리적 조치: 전산실·자료보관실 등 출입통제</li>
+        </ul>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제8조</span>자동 수집 장치</h2>
+        <p>본 광고 리드폼 및 상담 신청 절차에서는 회사가 쿠키 등 자동수집장치를 별도로 운영하지 않습니다. 다만 메타 플랫폼이 자체 정책에 따라 처리하는 정보는 메타의 개인정보 처리방침과 이용자 설정이 적용됩니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제9조</span>정보주체의 권리와 행사방법</h2>
+        <p>정보주체는 개인정보의 열람, 정정·삭제, 처리정지 및 동의 철회를 요구할 수 있습니다. 법정대리인이나 적법하게 위임받은 대리인을 통해서도 행사할 수 있습니다. 요청은 아래 접수처로 제출할 수 있으며, 개인정보처리자는 법령에서 정한 절차와 기간에 따라 처리합니다.</p>
+        <div class="tbl">
+          <table class="kv">
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">접수 방법</th><td>서면, 전화, 이메일</td></tr>
+              <tr><th scope="row">접수처</th><td>고객·개인정보보호팀, 02-830-5720, sbt3466@gmail.com</td></tr>
+              <tr><th scope="row">본인 확인</th><td>권리행사자 또는 적법한 대리인 여부를 필요한 최소 범위에서 확인</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제10조</span>만 14세 미만 아동</h2>
+        <p>본 상담 신청은 만 14세 미만 아동을 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만 14세 미만 아동의 신청 사실을 확인한 경우 해당 정보를 지체 없이 삭제합니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제11조</span>개인정보 보호책임자 및 열람청구 접수</h2>
+        <div class="tbl">
+          <table class="stack">
+            <thead><tr><th>구분</th><th>성명 또는 부서</th><th>연락처</th></tr></thead>
+            <tbody>
+              <tr><td data-label="구분">개인정보 보호책임자</td><td data-label="성명 또는 부서">장원기 이사</td><td data-label="연락처">02-830-5720 / sbt3466@gmail.com</td></tr>
+              <tr><td data-label="구분">열람청구 접수부서</td><td data-label="성명 또는 부서">고객·개인정보보호팀</td><td data-label="연락처">서울특별시 금천구 벚꽃로 298, 1313호 / 02-830-5720 / sbt3466@gmail.com</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제12조</span>권익침해 구제방법</h2>
+        <p>정보주체는 개인정보 침해에 대한 신고·상담 또는 분쟁조정을 위해 개인정보침해신고센터, 개인정보분쟁조정위원회 등 관계 기관에 문의할 수 있습니다. 기관명·전화번호·웹주소는 게시 시점의 공식 안내와 일치하는지 확인하여 기재합니다.</p>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">제13조</span>처리방침의 변경과 시행일</h2>
+        <p>이 처리방침은 2026년 10월 12일부터 시행합니다. 내용의 추가·삭제 또는 수정이 있을 때에는 변경사항과 시행일을 서비스 화면 또는 상담 신청 페이지를 통해 사전에 공개합니다. 정보주체의 권리에 중대한 변경이 있거나 추가 동의가 필요한 경우에는 관련 법령에 따른 별도 통지·동의를 진행합니다.</p>
+      </section>
+    </article>
+
+    <article class="sheet">
+      <header class="part-title">
+        <div class="eyebrow">ROOT 상담신청</div>
+        <h1>상담신청 동의서</h1>
+      </header>
+
+      <section class="art">
+        <h2><span class="no">1</span>개인정보 수집 및 이용 동의</h2>
+        <div class="tbl">
+          <table class="kv">
+            <thead><tr><th>고지 항목</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">수집·이용 목적</th><td>보험 상담 신청 접수, 신청자 확인, 상담 담당자 배정, 상담 연락·진행, 중복·부정 신청 방지, 민원·분쟁 처리</td></tr>
+              <tr><th scope="row">수집 항목</th><td>이름, 휴대전화번호, 성별, 생년월일, 거주지역</td></tr>
+              <tr><th scope="row">보유·이용 기간</th><td>상담 종료일, 동의 철회일 또는 수집일로부터 6개월이 되는 날 중 먼저 도래하는 때까지. 법령상 보존의무가 있는 경우 해당 기간 동안 분리 보관</td></tr>
+              <tr><th scope="row">동의 거부권 및 불이익</th><td>동의를 거부할 권리가 있습니다. 다만 상담 접수·배정에 필요한 최소정보에 동의하지 않으면 보험 상담 신청이 어렵습니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">2</span>개인정보 제3자 제공 동의</h2>
+        <div class="tbl">
+          <table class="kv">
+            <thead><tr><th>고지 항목</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">제공받는 자</th><td>
+                <div class="recipients">
+                  <div>
+                    <h4>메가라이프</h4>
+                    <ul>
+                      <li><span>씨제이1본부</span> 메가라이프청주</li>
+                      <li><span>씨제이2본부</span> 메가행복설계</li>
+                      <li><span>씨제이2본부</span> 메가행복한</li>
+                      <li><span>씨제이2본부</span> 메가현대</li>
+                      <li><span>씨제이3본부</span> 메가노블레스</li>
+                      <li><span>씨제이3본부</span> 메가라이프</li>
+                      <li><span>씨제이3본부</span> 메가라이프제천</li>
+                      <li><span>씨제이3본부</span> 메가라이프파트너</li>
+                      <li><span>씨제이3본부</span> 메가세종</li>
+                      <li><span>씨제이3본부</span> 메가원주히어로</li>
+                      <li><span>씨제이3본부</span> 메가중부</li>
+                      <li><span>씨제이3본부</span> 메가태송</li>
+                      <li><span>씨제이3본부</span> 엠비션</li>
+                      <li><span>씨제이4본부</span> 메가라온</li>
+                      <li><span>씨제이4본부</span> 메가명성</li>
+                      <li><span>씨제이5본부</span> 메가에스제이</li>
+                      <li><span>씨제이6본부</span></li>
+                      <li><span>씨제이7본부</span> 메가금왕</li>
+                      <li><span>씨제이7본부</span> 메가큐브</li>
+                      <li><span>씨제이8본부</span> 메가라이프스마일</li>
+                      <li><span>씨제이11본부</span></li>
+                      <li><span>씨제이12본부</span> 메가금융플라워</li>
+                      <li><span>씨제이12본부</span> 메가에이치케이</li>
+                      <li><span>씨제이12본부</span> 메가이지스</li>
+                      <li><span>씨제이15본부</span> 트리플</li>
+                      <li><span>씨제이16본부</span> 메가테크</li>
+                      <li><span>씨제이20본부</span> 메가중앙(충주중앙)</li>
+                      <li><span>씨제이21본부</span></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>메가밸류</h4>
+                    <ul><li><span>직할본부</span> 밸류서울</li></ul>
+                  </div>
+                  <div>
+                    <h4>메가인슈</h4>
+                    <ul><li><span>인슈본부</span> 메가인슈</li></ul>
+                  </div>
+                  <div>
+                    <h4>인슈에셋</h4>
+                    <ul><li><span>1본부</span> 인슈에셋고양</li></ul>
+                  </div>
+                </div>
+              </td></tr>
+              <tr><th scope="row">제공 목적</th><td>배정된 담당자를 통한 보험 상담 연락 및 상담 진행</td></tr>
+              <tr><th scope="row">제공 항목</th><td>이름, 휴대전화번호, 성별, 거주지역</td></tr>
+              <tr><th scope="row">보유·이용 기간</th><td>상담 종료일, 동의 철회일 또는 제공일로부터 6개월이 되는 날 중 먼저 도래하는 날까지</td></tr>
+              <tr><th scope="row">동의 거부권 및 불이익</th><td>동의를 거부할 권리가 있습니다. 다만 제3자 소속 상담 담당자의 상담이 서비스 구조상 필수라면 동의하지 않을 경우 상담 연결이 어렵습니다. 제3자 제공 없는 자체 상담은 별도 안내가 있는 경우에만 제공</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">3</span>선택적 마케팅 개인정보 이용 동의</h2>
+        <div class="tbl">
+          <table class="kv">
+            <thead><tr><th>고지 항목</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">이용 목적</th><td>보험상품·서비스 소개, 추가 상담 권유, 이벤트 및 혜택 안내</td></tr>
+              <tr><th scope="row">이용 항목</th><td>이름, 휴대전화번호, 성별, 생년월일, 거주지역, 상담 관심 분야</td></tr>
+              <tr><th scope="row">보유·이용 기간</th><td>동의 철회 시 또는 동의일로부터 2년까지</td></tr>
+              <tr><th scope="row">거부권 및 불이익</th><td>동의를 거부해도 기본 보험 상담 신청과 이용에는 불이익이 없습니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="art">
+        <h2><span class="no">4</span>광고성 정보 수신 동의</h2>
+        <p>전자적 전송매체로 영리 목적의 광고성 정보를 보내려는 경우 수신자의 사전 동의를 받고, 광고 표시·발신자 정보·수신거부 방법 등 법정 표시사항을 준수해야 합니다. 상담 신청에 필요한 연락과 광고성 정보는 운영상 구분하십시오.</p>
+        <div class="tbl">
+          <table class="stack">
+            <thead><tr><th>수신 목적</th><th>수신 채널</th><th>유효기간 및 철회</th></tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="수신 목적">보험상품·서비스 광고, 이벤트 및 혜택 안내</td>
+                <td data-label="수신 채널">문자메시지, 전화, 이메일, 카카오 알림·친구톡</td>
+                <td data-label="유효기간 및 철회">동의 철회 시 또는 동의일로부터 2년까지. 언제든 무료로 수신동의를 철회할 수 있습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </article>
+
+    <footer>주식회사 에스비티(SBT) · 고객·개인정보보호팀 02-830-5720 · sbt3466@gmail.com</footer>
+  </main>
+</div>
+
+</body>
+</html>
